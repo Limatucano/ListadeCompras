@@ -2,6 +2,7 @@ package com.example.listadecompras
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import android.widget.*
 
 class MainActivity : AppCompatActivity() {
@@ -22,7 +23,10 @@ class MainActivity : AppCompatActivity() {
             }else{
                 txt_produto.error = "Digite algo primeiro"
             }
-
+        }
+        list_view_produtos.setOnItemClickListener{ adapterView: AdapterView<*>, view: View, position: Int, id: Long ->
+            var product = produtosAdapter.getItem(position)
+            produtosAdapter.remove(product)
         }
 
 
