@@ -20,6 +20,7 @@
             android:layout_margin="5dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:id="@+id/text_box"
             android:text="Digite o nome do item:" />
 
         <EditText
@@ -42,10 +43,11 @@
             android:textColor="@android:color/white"/>
 
     </androidx.cardview.widget.CardView>
+
     <ListView
+        android:id="@+id/list_view_produtos"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/list_view_produtos" />
+        android:layout_height="wrap_content" />
 
 
 </LinearLayout>
