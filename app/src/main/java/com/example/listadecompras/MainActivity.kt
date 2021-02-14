@@ -1,5 +1,7 @@
 package com.example.listadecompras
 
+import android.content.Intent
+import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
@@ -10,21 +12,16 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        val txt_produto = findViewById<EditText>(R.id.txt_produto)
-        val btn_inserir = findViewById<Button>(R.id.btn_inserir)
         val produtosAdapter = ArrayAdapter<String>(this, android.R.layout.simple_list_item_1)
+        val btn_adicionar = findViewById<Button>(R.id.btn_adicionar)
         val list_view_produtos = findViewById<ListView>(R.id.list_view_produtos)
-        list_view_produtos.adapter = produtosAdapter
 
-        btn_inserir.setOnClickListener {
-            var produto = txt_produto.text.toString()
-            if(produto.isNotEmpty()){
-                produtosAdapter.add(produto)
-                txt_produto.text.clear()
-            }else{
-                txt_produto.error = "Digite algo primeiro"
-            }
+        list_view_produtos.adapter = produtosAdapter
+        btn_adicionar.setOnClickListener {
+            val intent = Intent(this, CadastroActivity::class.java)
+            startActivity(intent)
         }
+
         list_view_produtos.setOnItemClickListener{ adapterView: AdapterView<*>, view: View, position: Int, id: Long ->
             var product = produtosAdapter.getItem(position)
             produtosAdapter.remove(product)
