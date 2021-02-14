@@ -1,4 +1,3 @@
 package com.example.listadecompras
 
-class Utils {
-}
+var produtosGlobal = mutableListOf<Produto>()
