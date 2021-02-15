@@ -35,6 +35,7 @@ class MainActivity : AppCompatActivity() {
         super.onResume()
         val list_view_produtos = findViewById<ListView>(R.id.list_view_produtos)
         val	adapter	=	list_view_produtos.adapter	as	ProdutoAdapter
+        adapter.clear()
         adapter.addAll(produtosGlobal)
     }
 }
