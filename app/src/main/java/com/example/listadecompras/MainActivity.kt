@@ -15,7 +15,7 @@ class MainActivity : AppCompatActivity() {
         val produtosAdapter = ProdutoAdapter(this)
         val btn_adicionar = findViewById<Button>(R.id.btn_adicionar)
         val list_view_produtos = findViewById<ListView>(R.id.list_view_produtos)
-        produtosAdapter.addAll(produtosGlobal)
+
 
         list_view_produtos.adapter = produtosAdapter
         btn_adicionar.setOnClickListener {
@@ -29,6 +29,13 @@ class MainActivity : AppCompatActivity() {
         }
 
 
+    }
+
+    override fun onResume() {
+        super.onResume()
+        val list_view_produtos = findViewById<ListView>(R.id.list_view_produtos)
+        val	adapter	=	list_view_produtos.adapter	as	ProdutoAdapter
+        adapter.addAll(produtosGlobal)
     }
 }
 

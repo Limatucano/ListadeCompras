@@ -18,6 +18,7 @@
         android:layout_weight="1"
         android:id="@+id/txt_item_produto"
         android:textStyle="bold"
+        android:textSize="26sp"
         android:gravity="center"/>
     <LinearLayout
         android:layout_width="wrap_content"
