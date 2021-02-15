@@ -8,11 +8,12 @@ import android.widget.ArrayAdapter
 import android.widget.ImageView
 import android.widget.TextView
 import java.text.NumberFormat
+import	java.util.Locale
 
 class ProdutoAdapter(contexto:Context): ArrayAdapter<Produto>(contexto, 0)
 {
     override fun getView(position: Int, convertView: View?, parent: ViewGroup): View {
-        val f = NumberFormat.getCurrencyInstance()
+        val f = NumberFormat.getCurrencyInstance(Locale("pt","br"))
 
         var v:View
         if(convertView != null){

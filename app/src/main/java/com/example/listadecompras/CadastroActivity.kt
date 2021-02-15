@@ -10,10 +10,12 @@ class CadastroActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_cadastro)
+        //pegando itens da view
         val btn_inserir = findViewById<Button>(R.id.btn_inserir)
         val txt_produto = findViewById<EditText>(R.id.txt_produto)
         val txt_qtd = findViewById<EditText>(R.id.txt_qtd)
         val txt_valor = findViewById<EditText>(R.id.txt_valor)
+
         btn_inserir.setOnClickListener {
             val qtd = txt_qtd.text.toString()
             val valor = txt_valor.text.toString()
